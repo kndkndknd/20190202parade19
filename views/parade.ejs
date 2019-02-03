@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <title><%= title %></title>
+  <LINK rel="stylesheet" type="text/css" href="/css/client.css">
+</head>
+<body id="body">
+  <script src="/socket.io/socket.io.js"></script>
+  <div id="wrapper">
+  <video id="video" playsinline controls="true" style="display:none;"></video>
+  <canvas id="cnvs">
+    canvas not applied.
+  </canvas>
+  <canvas id="strCnvs">
+    canvas not applied.
+  </canvas>
+  <script>
+    var socket = io.connect();
+    var video;
+    var buffer = document.createElement('canvas');
+    var client = "<%= title %>";
+    //var mode = "none"; //"osc" or "feedback" or "whitenoise"
+/*
+    var cmdMode = {
+      "sinewave": false,
+      "whitenoise": false,
+      "feedback": false,
+      "instruction": false
+    }
+    */
+    var videoMode = {"mode": "none", "option": "none"}; //"record" or "playback"
+    var strings = "";
+    var streamList;
+  </script>
+  <script src="/javascripts/parade.js"></script>
+</body>
+</html>
